@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>
+            Forms
+        </title>
+        <style type="text/css">
+        input {
+            border: 1px solid #255054;
+            border-radius: 4px;
+            height: 25px;
+        }
+        input[type=submit]{
+            background: #b3ccea;
+        }
+        fieldset{
+            border-color: beige;
+            border: 1px solid;
+            border-radius: 3.5px;
+            margin: 10 10 0 10px;
+            width: 40%;
+            float: left;
+        }
+        fieldset legend{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            color: #9e4776;
+        }
+        label{
+            font-size: 12px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        </style>
+    </head>
+    <body>
+        <fieldset><legend>User Details</legend>
+        <form>
+        <table>
+            <tbody>
+                <tr>
+                    <th>
+                        <label> First Name </label>
+                    </th>
+                    <td>
+                        <input type="text" name="fname" maxlength="10" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label> Email </label>
+                    </th>
+                    <td> 
+                        <input type="email" name="email" placeholder="Your l name" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Password</label>
+                    </th>
+                    <td> 
+                        <input type="password" name="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Age</label>
+                    </th>
+                    <td> 
+                        <input type="number" name="number" placeholder="Your l name" min="18" max="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="dob"> Date of Birth </label>
+                    </th>
+                    <td> 
+                        <input type="date" name="dob" placeholder="dob"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Date & Time of Birth</label>
+                    </th>
+                    <td> 
+                        <input type="date" name="dobt"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Time</label>
+                    </th>
+                    <td> 
+                        <input type="time" name="time" placeholder="time"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Mobile</label>
+                    </th>
+                    <td> 
+                        <input type="tel" name="tel" placeholder="Your Mobile!"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Save" name="btn-save" formaction="" formmethod="GET"/>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"> <sub>Create/ Edit User </sub> </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    </fieldset>
+    <fieldset>
+        <legend>Fields</legend>
+        <em>Hello</em>
+        <br />
+        <bdo dir="ltr">hello how are you</bdo>
+        <hr />
+        It is an interesting world with every man for himself
+       <blockquote>
+            The poor dies, who cares
+        </blockquote>
+        <code>
+            int i= 10; <br />
+            if(i &lt; 11){ <br />
+        &nbsp; System.out.println("Hello"); <br />
+            }
+        </code>
+        <br />
+        <hr />
+
+    </fieldset>
+    </body>
+</html>
