@@ -4,13 +4,10 @@
             Forms
         </title>
         <style type="text/css">
-        input {
+        input:not([type=submit]) {
             border: 1px solid #255054;
             border-radius: 4px;
             height: 25px;
-        }
-        input[type=submit]{
-            background: #b3ccea;
         }
         fieldset{
             border-color: beige;
@@ -29,6 +26,7 @@
         label{
             font-size: 12px;
             font-family: 'Times New Roman', Times, serif;
+            color: #FFFFFF;
         }
         nav ul li a {
             text-decoration: none;
@@ -41,6 +39,16 @@
         /*nav ul li a:visited{
             color: #d83535;
         }*/
+        body{
+           /* background-image: 'body.jpeg';*/
+            background: url("body.jpg");
+        }
+        input[type=submit]{
+            background: url("button-sprite.png") no-repeat;
+            width: 65%;
+            height: 36px;
+            border: none;
+        }
         </style>
     </head>
     <body>
@@ -48,9 +56,14 @@
             <section>
                 <nav>
                     <ul>
-                        <li>    <a href="">Home</a></li>
-                        <li>    <a href="">About us</a></li>
-                        <li>    <a href="https://github.com" target="blank">Contact us</a></li>
+                        <li>    <a href="" tabindex="1">Home</a></li>
+                        <li>    <a href="" tabindex="2">About us</a></li>
+                        <li>    <a href="https://github.com" target="blank" tabindex="3">Contact us</a></li>
+                        <li>    
+                            <a href="https://www.github.com" target="_blank" tabindex="4">
+                                <img src="github.png" />
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </section>
@@ -125,6 +138,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
+                        <input type="reset" name="reset" value="Clear"/>
                         <input type="submit" value="Save" name="btn-save" formaction="" formmethod="GET"/>
                     </td>
                 </tr>
@@ -157,5 +171,6 @@
         <hr />
     </fieldset>
     <a href="">Hello Just Testing the Styles</a>
-    </body>
+    <img src="img1.jpeg"  style="margin:10 10 10 10px;border:2px solid #96937f;width: 30%;height: 50%;"/>    
+</body>        
 </html>
