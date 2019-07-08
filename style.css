@@ -24,6 +24,8 @@
 .form-submit:hover{
     background-color: hsla(190, 54%, 19%, 0.6);
 }
-placeholder{
-    font-style: italic;
+body{
+  /*  background: linear-gradient(red 0%, orange 10%, green 75%, blue 100%);
+    */
+    background: linear-gradient(135deg, orange, orange 60%, cyan);
 }
