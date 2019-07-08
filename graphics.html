@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title> Graphics</title>
+    </head>
+    <body>
+        <svg>
+            <circle cx="70" cy="70" r="50" 
+            fill="purple" stroke="green">
+            </circle>
+            <text x="90" y="90" >Hello</text>
+        </svg>
+        <svg>
+            <rect width="120" height="120" x="10" y="10" fill="black">
+            </rect>
+            <circle cx="70" cy="70" r="65" fill="white">
+            </circle>   
+        </svg>
+        <svg>
+            <rect width="100" height="100" x="10" y="10">
+                <animate attributeName="x" dur="2s" from="-20" to ="50" repeatCount="indefinite" />
+            </rect>
+        </svg>
+
+        <svg>
+            <rect width="100" height="100" x="10" y="10">
+                <animate attributeName="x"  />
+            </rect>
+        </svg>
+        <svg>
+            <rect x="10" y="10" width="100" height="100" fill="url(#custom-gradient)">
+            </rect>
+            <circle cx="100" cy="100" r="50" fill="url(#custom-gradient1)">
+            </circle>
+            <defs>
+                <linearGradient id="custom-gradient" gradientTransform="rotate(90)">
+                    <stop offset="10%" stop-color="blue"></stop>
+                    <stop offset="30%" stop-color="red"></stop>
+                    <stop offset="60%" stop-color="purple"></stop>
+                </linearGradient>
+                <linearGradient id="custom-gradient1">
+                        <stop offset="20%" stop-color="purple"></stop>
+                        <stop offset="30%" stop-color="orange"></stop>
+                        <stop offset="50%" stop-color="green"></stop>
+                    </linearGradient>
+            </defs>
+        </svg>
+    </body>
+</html>

@@ -15,8 +15,6 @@
 }
 .form-submit{
     cursor: pointer;
-    /*background-image: linear-gradient(to right, #1f2e44, #0a596f, #088687, #5fb288, #bdd882);*/
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0b7a1+0,8c3310+50,752201+75,bf6e4e+100 */
     background: #f0b7a1; /* Old browsers */
     background: -moz-linear-gradient(top,  #f0b7a1 0%, #8c3310 50%, #752201 75%, #bf6e4e 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  #f0b7a1 0%,#8c3310 50%,#752201 75%,#bf6e4e 100%); /* Chrome10-25,Safari5.1-6 */
