@@ -1,7 +1,8 @@
+'use strict';
+
 console.log('Hello World')
 /*document.write('Welcome to Javascript');
 */
-
 var uId = 10;
 console.log('uId is ',uId);
 uId = 'Bob';
@@ -74,3 +75,85 @@ if(i == 12 && j == 12){
     console.log(`${j} is greater than ${i}`);
 }
 
+var evenNums = [2,4,6,8];
+evenNums.push(10);
+
+console.log('Even Nums '+evenNums);
+evenNums.pop();
+console.log('Even Nums '+evenNums);
+
+var oddNums = [1,3,5,7];
+oddNums = oddNums.concat(evenNums);
+console.log(oddNums);
+// for loop
+console.log('FOR Loop');
+let _index = 0;
+for(_index=0;_index<5;_index++){
+    console.log(_index);
+}
+// while loop
+console.log('WHile Loop');
+_index = 0;
+while(_index < 5){
+    console.log(_index);
+    _index++;
+}
+// do while
+console.log('DO While Loop');
+_index = 0;
+do{
+    console.log(_index);
+    _index++;
+} while(_index < 5);
+
+//
+console.log('Break Statement');
+_index = 0;
+for(_index= 0; _index< 5;_index++){
+    console.log(_index);
+    if(_index == 2){
+        break;
+    }
+}
+//
+console.log('Continue Statement');
+_index = 0;
+for(_index= 0; _index< 5;_index++){
+    if(_index == 2){
+        continue;
+    }
+    console.log(_index);
+}
+// For Of
+console.log('For In/ Of Loop');
+let messages = ['Hello','Hi','Hola'];
+
+for(let m of messages){
+    console.log(m);
+}
+// For In
+for(let m in messages){
+    console.log(messages[m]);
+}
+
+vals = {
+        one : 'One Value',
+        two : 'Two Value'
+    };
+console.log(Object.keys(vals));
+
+// Click event
+function clickMe(){
+    const name = document.getElementById('name');
+    alert(`Hello ${name.value}`);
+    name.value = 'IBM';
+    let rows;
+    for(let m in messages){
+        rows +=`<tr><th>${m+1}</th><th>${messages[m]}</th></tr>`;
+    }
+    let _table =`<table>
+                <tr><th>S.No</th><th>Message</th></tr>
+                ${rows}
+                </table>`;
+    document.getElementById('msgs').innerHTML =_table;
+}
