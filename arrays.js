@@ -47,7 +47,7 @@ const emps = [
 ];
 const loadEmployees= ()=>{
     let rows = '';
-    console.log(emps);
+    //console.log(emps);
     // traverse the array
     emps.forEach((employee) =>{
         rows += empRow(employee);
@@ -128,9 +128,9 @@ const sortEmployee = (sortBy)=>{
     }else if(sortBy == 'ORG'){
         newEmps.sort((emp1,emp2)=>{
         if(emp1.organization > emp2.organization){
-            return 1;
+            return -1;
         }else if(emp1.organization < emp2.organization){
-           return -1;
+           return 1;
        }else{
            return 0;
        }       
@@ -142,6 +142,7 @@ const sortEmployee = (sortBy)=>{
 }
 const localStore=()=>{
     localStorage.setItem("message","Hello how r u");
+    localStorage.setItem("emps",JSON.stringify(emps));
 }
 const sessionStore=()=>{
     sessionStorage.setItem("sessionMessage","Welcome to Session Storage");
@@ -163,4 +164,6 @@ const viewWebStore = () =>{
     // clear web stores
     localStorage.removeItem('message');
     sessionStorage.removeItem('sessionMessage');
+    let storedEmps =JSON.parse(localStorage.getItem("emps"));
+    console.log(storedEmps);
 }
