@@ -117,4 +117,37 @@ mWeakMap.set(obj2,'Weak Hi');
 mWeakMap.set(obj3,'Weak How r u');
 
 console.log('WEAK MAP : ',mWeakMap.get(obj2));
+// delete an item
+//mWeakMap.delete(obj1);
+
+const mWeakSet = new WeakSet();
+mWeakSet.add(obj1);
+mWeakSet.add(obj2);
+mWeakSet.add(obj3);
+
+//mWeakSet
+console.log('Weak Set: ');
+
+let newEmps = emps.map(e=>{
+    return {
+        user : {
+                id: e.id,
+                name :  e.name +', ' + e.email,
+                organization: e.organization
+        }
+    }
+});
+newEmps.forEach(e=>console.log(e));
+
+
+let msgs = [["How","Hola"],["Are"], ["You"], "Welcome"];
+
+msgs.map(m=>{
+    return m;
+}).forEach(m=>console.log('Using MAP: ',m));
+
+
+msgs.flatMap(m=>{
+    return m;
+}).forEach(m=>console.log('Using FLAT MAP: ',m));
 
