@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Arrays</title>
+        <script type="text/javascript" src="arrays.js"></script>
+    <style>
+    input{
+        display: block;
+        border: 1px solid #ade6de;
+        border-radius: 2px;
+        margin-top: 3px;
+        height: 2em;
+        width: 15em;
+    }
+    input[type=button]{
+        cursor: pointer;
+    }
+    input[type=button]:hover{
+        background-color: #8adfff;
+    }
+    </style>
+    </head>
+    <body onload="loadEmployees()">
+        <input type="text" name="search" id="search" placeholder="Org is.." />
+        <input type="text" name="findById" id="findById" placeholder="Find by Id" />
+        <input type="button" name="findById" onclick="findById()" value="Find By Id"/>
+        <input type="button" name="locate" onclick="filterEmps()" value="Search by Organization"/>
+        <div id="div-emps">
+        </div>
+    </body>
+</html>

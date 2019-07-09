@@ -157,3 +157,12 @@ function clickMe(){
                 </table>`;
     document.getElementById('msgs').innerHTML =_table;
 }
+let uMap = new Map();
+uMap.set('one',1);
+uMap.set('two',2);
+uMap.set('three',3);
+
+for(let [key,value] of uMap){
+    console.log(`${key}: ${value}`);
+}
+
