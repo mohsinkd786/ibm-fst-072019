@@ -198,12 +198,11 @@ const employees = [
     }
 ];
 
-const _totalSal = employees.reduce((emp1,emp2)=>{
-    if(emp1 != undefined){
-        console.log(emp1);
-    }
-    return emp1.salary + emp2.salary;
-});
+
+
+const _totalSal = employees.reduce((sum,emp2)=>{
+    return sum + emp2.salary;
+},0);
 
 console.log(`Total Salary is : ${_totalSal}`);
 
@@ -218,7 +217,7 @@ let groupByOrg = emps.reduceRight((acc,emp)=>{
 console.log(groupByOrg);
 
 const groupByDesignation = employees.reduce((results,employ)=>{
-    let designation = employ['designation'];
+    let designation = employ.designation;
     if(!results[designation]){
         results[designation] = [];
     }
@@ -226,3 +225,19 @@ const groupByDesignation = employees.reduce((results,employ)=>{
     return results;
 },{});
 console.log(groupByDesignation);
+
+const __salary = employees.reduce((emp1,emp2)=>{
+    if(emp1.salary!=undefined){
+        return emp1.salary + emp2.salary;
+    }else{
+        return emp1 + emp2.salary;
+    }
+});
+
+console.log(__salary);
+
+const __InitSalary = employees.reduce((emp1,emp2)=>{
+    return emp1 + emp2.salary;
+},0);
+
+console.log(__InitSalary);
