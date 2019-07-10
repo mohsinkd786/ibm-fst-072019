@@ -15,6 +15,7 @@ const saveEmployee = () =>{
 }
 
 const fetchAllEmployees = ()=>{
+    document.getElementById('eEmail').removeAttribute('readonly');
     const emp = new EmployeeService();
     const employees = emp._all();
     buildEmployeeTable(employees);
@@ -29,6 +30,17 @@ const searchEmployees = () =>{
                     );
     buildEmployeeTable(employees);
 }
+// edit 
+const editEmployee = (eEmail) =>{
+    const emp = new EmployeeService();
+    let empFound = emp._update(eEmail);
+    document.getElementById('eId').value = empFound.eId;
+    document.getElementById('eName').value = empFound.eName;
+    document.getElementById('eEmail').value = empFound.eEmail;
+    document.getElementById('eDesignation').value = empFound.eDesignation;
+    // make email read only
+    document.getElementById('eEmail').setAttribute('readonly',true);
+}
 const buildEmployeeTable = (employees) =>{
     const empBody = document.getElementById('emp-details');
     let rows = '';
@@ -39,6 +51,7 @@ const buildEmployeeTable = (employees) =>{
                     <td>${emp.eEmail}</td>
                     <td>${emp.eDesignation}</td>
                     <td><a href='#' onclick="deleteEmployee('${emp.eEmail}')">Delete</a></td>
+                    <td><a href='#' onclick="editEmployee('${emp.eEmail}')">Edit</a></td>
                 </tr>`
     });
     empBody.innerHTML = rows;
@@ -108,8 +121,8 @@ class EmployeeService {
             eDesignation: this.eDesignation
         }));
     }
-    _update(){
-
+    _update(eEmail){
+        return JSON.parse(localStorage.getItem(eEmail));
     }
     _delete(eEmail){
         localStorage.removeItem(eEmail);
