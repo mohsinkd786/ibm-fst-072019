@@ -68,11 +68,7 @@ const deleteEmployee = (eEmail)=>{
     buildEmployeeTable(emps);
 }
 class EmployeeService {
-    eId
-    eName
-    eEmail
-    eDesignation
-
+    
     // all argument constructor
     // setup method to configure attri
     setup(eId,eName,eEmail,eDesignation){
