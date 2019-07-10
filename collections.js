@@ -151,3 +151,78 @@ msgs.flatMap(m=>{
     return m;
 }).forEach(m=>console.log('Using FLAT MAP: ',m));
 
+
+
+const _nums = [1,4,5,2];
+const _res = _nums.reduce((_prev,_curr)=>{
+    return _prev + _curr;
+});
+console.log(`SUM is : ${_res}`);
+
+const _strs = ["Hello", "Hi", "Hey"];
+const _strRes = _strs.reduce((_p,_n)=>{
+    return _n + _p;
+});
+console.log(_strRes);
+
+const _strsRight = ["Hello", "Hi", "Hey"];
+const _strResRight = _strs.reduceRight((_p,_n)=>{
+    return _p + _n;
+});
+console.log(_strResRight);
+
+const employees = [
+    {
+        id: 1,
+        name: 'Bob',
+        salary : 100,
+        designation: 'Programmer'
+    },
+    {
+        id: 2,
+        name: 'Steve',
+        salary : 50,
+        designation: 'Programmer'
+    },
+    {
+        id: 3,
+        name: 'John',
+        salary : 75,
+        designation: 'Developer'
+    },
+    {
+        id: 4,
+        name: 'John',
+        salary : 80,
+        designation: 'Tech Lead'
+    }
+];
+
+const _totalSal = employees.reduce((emp1,emp2)=>{
+    if(emp1 != undefined){
+        console.log(emp1);
+    }
+    return emp1.salary + emp2.salary;
+});
+
+console.log(`Total Salary is : ${_totalSal}`);
+
+let groupByOrg = emps.reduceRight((acc,emp)=>{
+    let key = emp['organization']; 
+    if(!acc[key]){
+            acc[key]=[];
+        }
+    acc[key].push(emp);
+    return acc;
+},{});
+console.log(groupByOrg);
+
+const groupByDesignation = employees.reduce((results,employ)=>{
+    let designation = employ['designation'];
+    if(!results[designation]){
+        results[designation] = [];
+    }
+    results[designation].push(employ);
+    return results;
+},{});
+console.log(groupByDesignation);
