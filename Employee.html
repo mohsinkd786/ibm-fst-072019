@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>
+            Employee | CRUD
+        </title>
+        <style>
+        .emp-input{
+            border: 1px solid;
+        }
+        .emp-input-spacing{
+            display: block;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        </style>
+        <script type="text/javascript" src="EmployeeService.js"></script>
+    </head>
+    <body onload="fetchAllEmployees()">
+        <div>
+            <fieldset><legend>Add Employee</legend>
+                <input type="number" min="1" max="100" id="eId" class="emp-input emp-input-spacing" placeholder="ID"/>
+                <input type="text" id="eName" class="emp-input emp-input-spacing" placeholder="Name"/>
+                <input type="email" id="eEmail" class="emp-input emp-input-spacing" placeholder="Email"/>
+                <input type="text" id="eDesignation" class="emp-input emp-input-spacing" placeholder="Designation"/>
+                <input type="button" onclick="saveEmployee()" value="SAVE" class="emp-input-spacing" />
+                <input type="button" onclick="fetchAllEmployees()" value="REFRESH" class="emp-input-spacing" />
+        </fieldset>
+        </div>
+        <div>
+            <fieldset><legend>Search </legend>
+                <input type="text" id="criteria" class="emp-input-spacing"/>
+                <select id="searchBy" class="emp-input-spacing" onchange="searchEmployees()">
+                    <option value="">-select-</option>
+                    <option value="ID">ID</option>
+                    <option value="DESIG">Designation</option>
+                </select>
+            </fieldset>
+        </div>
+        <table id="tbl-employee">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Designation</th>
+                </tr>
+            </thead>
+            <tbody id="emp-details">
+
+            </tbody>
+        </table>
+    </body>
+</html>
