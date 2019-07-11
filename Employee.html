@@ -11,6 +11,14 @@
             display: block;
             margin-left: 10px;
             margin-top: 10px;
+            width: 15em;
+            height: 2em;
+        }
+        .emp-button{
+            cursor: pointer;
+        }
+        .emp-button:hover{
+            background-color: hsl(190, 63%, 66%);
         }
         </style>
         <script type="text/javascript" src="EmployeeService.js"></script>
@@ -22,8 +30,8 @@
                 <input type="text" id="eName" class="emp-input emp-input-spacing" placeholder="Name"/>
                 <input type="email" id="eEmail" class="emp-input emp-input-spacing" placeholder="Email"/>
                 <input type="text" id="eDesignation" class="emp-input emp-input-spacing" placeholder="Designation"/>
-                <input type="button" onclick="saveEmployee()" value="SAVE" class="emp-input-spacing" />
-                <input type="button" onclick="fetchAllEmployees()" value="REFRESH" class="emp-input-spacing" />
+                <input type="button" onclick="saveEmployee()" value="SAVE" class="emp-input-spacing emp-button" />
+                <input type="button" onclick="fetchAllEmployees()" value="REFRESH" class="emp-input-spacing emp-button" />
         </fieldset>
         </div>
         <div>
