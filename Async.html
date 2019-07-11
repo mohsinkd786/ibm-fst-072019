@@ -3,6 +3,14 @@
         <script src="async.js" type="text/javascript"></script>
     </head>
     <body onload="getUsers()">
+            <fieldset><legend>Add Employee</legend>
+                <input type="text" id="name" class="emp-input emp-input-spacing" placeholder="Name"/>
+                <input type="text" id="age" class="emp-input emp-input-spacing" placeholder="Age"/>
+                <input type="text" id="salary" class="emp-input emp-input-spacing" placeholder="Salary"/>
+                <input type="button" onclick="createUser()" value="SAVE" class="emp-input-spacing emp-button" />
+                <input type="button" onclick="updateUser()" value="UPDATE" class="emp-input-spacing emp-button" />
+            </fieldset>
+                
         <div id="users">
 
         </div>
