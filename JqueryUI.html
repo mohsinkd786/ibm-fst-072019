@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title> Jquery Validation</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  <!--<link rel="stylesheet" href="jquery-ui-theme.css" />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" integrity="sha256-p6xU9YulB7E2Ic62/PX+h59ayb3PBJ0WFTEQxq0EjHw=" crossorigin="anonymous" />
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.min.css" integrity="sha256-eZniZ8LGwFHGy3Dndt7l7eKikb8Dg+d2e1AvTP5NWPg=" crossorigin="anonymous" />-->
+    <script type="text/javascript">
+    $(document).ready(()=>{
+       $('#save').button();
+       // radio buttons
+       //$('#gender').checkboxradio();
+       //$('#languages').radio();
+        const _countries = [
+            "India",
+            "Italy",
+            "Indonesia",
+            "USA" ,
+            "UK",
+            "Australia",
+            "South Africa",
+            "New Zealand",
+            "Austria"
+        ];
+       $('#country').autocomplete({
+            source : _countries
+       });
+       $('#tabs').tabs({
+           // specify default selected tab
+           active: 0
+       });
+       $('#top-menu').menu({
+          
+       });
+       $('#progress-bar').progressbar({
+        value : 70
+       });
+       $('#date-picker').datepicker();
+       //
+       $('#programming-langs').selectmenu();
+    
+       $('#msg-popup').dialog({
+           resizable : false
+       });
+       $('#country').tooltip();
+
+       //
+       $('#draggable').draggable();
+       $('#dropable').droppable();
+
+       $('#sortable').sortable();
+       $('#toggle').accordion();
+    
+
+       //end of ready function
+    });
+    </script>
+    <style>
+    /* Clearfix for the menu */
+/*.ui-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.ui-menu .ui-menu-item {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: auto;
+} */
+    </style>
+    </head>
+    <body>
+        <header>
+            <ul id="top-menu">
+                <li><div>Home</div></li>
+                <li>
+                    <div>About us</div>
+                </li>
+                <li> <div>Services </div>
+                    <ul>
+                        <li ><div>Service 1</div></li>
+                        <li><div>Service 2</div></li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Contact us</div>
+                </li>
+            </ul>
+        </header>
+    <input type="button" id="save" value="Save"/>   
+    <input type="radio" id="gender" value="M"/>MALE
+    <input type="radio" id="gender" value="F"/>FEMALE
+    <input type="checkbox" id="languages" value="eng"/> ENGLISH
+    <input type="checkbox" id="languages" value="hindi"/> HINDI
+    <input type="checkbox" id="languages" value="urdu"/> URDU
+    <input type="text" name="country" id="country"  title='World countries'/>
+    <div id="tabs">
+        <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#share">Register</a></li>
+        </ul>
+        <div id="login">
+            <input type="text"  placeholder="username" />
+        </div>
+        <div id="register">
+            <input type="text" placeholder="country" />
+            <input type="text" placeholder="state"/>
+        </div>
+        <div id="share">
+            <input type="text" placeholder="country" />
+            <input type="text" placeholder="state"/>
+            <input type="text" placeholder="city"/>
+        </div>
+        <div id="progress-bar">
+
+        </div>
+        <div id="date-picker">
+
+        </div>
+        <select id='programming-langs'>
+            <option value='Java'>Java</option>
+            <option value='Java'>Java</option>
+            <option value='Java'>Java</option>
+            <option value='Java'>Java</option>
+        </select>
+
+        <div id="msg-popup"  title="Message Box">
+            Hello ashjashjsjahs
+            askjkakjskjaskas
+            wkeiuweweuwyewuiegiuweuiwe
+        </div>
+        <div id='draggable'>
+            ttttttttttttttttt
+            uyuasasasausasoaaosu
+            shaoiasoausioauioausioasuosi
+
+        </div>
+        <div id='dropable'>
+                ttttttttttttttttt
+                uyuasasasausasoaaosu
+                shaoiasoausioauioausioasuosi
+    
+        </div>
+        <ui id='sortable'>
+            <li class="ui-state-default">One</li>
+            <li class="ui-state-default">Two</li>
+            <li class="ui-state-default">Three</li>
+            <li class="ui-state-default">Four</li>
+            <li class="ui-state-default">Five</li>
+        </ui>
+    </div>
+
+    <div id="toggle">
+        <h3>First header</h3>
+        <div>First content panel</div>
+        <h3>Second header</h3>
+        <div>Second content panel</div>
+    </div>
+</body>
+</html>

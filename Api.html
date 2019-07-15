@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title> Jquery Validation</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+    $(document).ready(()=>{
+        const _url = 'http://dummy.restapiexample.com/api/v1/create'
+        //get
+        $.get({
+            //method: 'GET',
+            url : 'https://reqres.in/api/users?page=1',
+            success:(response)=> {
+                console.log(response.data);
+                $('#users').html(buildTable(response.data));
+            },
+            error:()=>{
+                console.error('Error Occured');
+            }
+        });
+        // post
+        $.ajax({
+            method: 'POST',
+            url : _url,
+            // request body 
+            data : JSON.stringify({
+            name: 'JOHNDOE_IBM12',
+            salary: 99999,
+            age: 71
+        }),
+            success:(response)=> {
+                console.log(response);
+                //$('#users').html(buildTable(response.data));
+            },
+            error:()=>{
+                console.error('Error Occured');
+            }
+        });
+        const buildTable = (data)=>{
+            let rows = `<tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>`;
+            data.forEach((record)=>{
+                rows += `<tr>
+                            <td>${record.id}</td>
+                            <td>${record.first_name},${record.last_name}</td>
+                            <td>${record.email}</td>
+                        </tr>`;
+            })
+            return rows;
+        }
+    });
+    </script>
+    </head>
+    <body>
+    <table id='users'></table>   
+    </body>
+</html>
