@@ -29,15 +29,48 @@
             $('#email').val('reset@mm.com');
         });
         // click event by an element type
-        
-        $('div').click(()=>{
-            console.log('div 1');
-            $('#email').val('event-div@mm.com');
-        });
-        
+        /*
         $('div').click(()=>{
             console.log('div');
             $('#email').val('div-event@mm.com');
+        }); */
+        // on load 
+        $('#content').html("<span class='my-span'><b>Hello Jquery</b></span>");
+        $('.my-span').on('click',()=>{
+            $('#txt-content').text('Hello Text content');
+            console.log('My Span called');
+        });
+
+        // slide toggle
+        $('#btn-emp-slide-toggle').click(()=>{
+            /*$('#frm-emp').slideToggle({
+                easing: 'linear',
+                duration: 1000
+            },()=>{
+                console.log('Show/hide form');
+            }); */
+            //
+            $('#frm-emp-slidetoggle').slideToggle('fast',()=>{
+                console.log('Show/hide form');
+            });
+        });
+        // show hide
+        $('#btn-emp-hide').click(()=>{
+            $('#frm-emp-slidetoggle').hide(1000,()=>{
+                $('#email1').val('');
+                $('#email2').val('');
+                $('#email3').val('');
+            });
+        });
+        $('#btn-emp-show').click(()=>{
+            $('#frm-emp-slidetoggle').show();
+        });
+        // Fade In / Out
+        $('#btn-emp-fade-out').click(()=>{
+            $('#frm-emp-slidetoggle').fadeOut(2000);
+        });
+        $('#btn-emp-fade-in').click(()=>{
+            $('#frm-emp-slidetoggle').fadeIn(1000);
         });
     });
     </script>
@@ -47,6 +80,11 @@
             <input type="text" id="email" />
             <input type="button" id="save" value="Save" />
             <input type="button" class='update' value="Update" />
+            <input type="button" id='btn-emp-slide-toggle' value="Slide Toggle Employees" />
+            <input type="button" id='btn-emp-hide' value="Hide Employees" />
+            <input type="button" id='btn-emp-show' value="Show Employees" />
+            <input type="button" id='btn-emp-fade-out' value="Fade Out Employees" />
+            <input type="button" id='btn-emp-fade-in' value="Fade In Employees" />
         </div>
         <div id="update">
             HELLO how r u what is going on....
@@ -62,6 +100,18 @@
             HELLO how r u what is going on....
             HELLO how r u what is going on....
         </div>
+        <div id="content">
+
+        </div>
+        <div id='txt-content'>
+
+        </div>
+        <fieldset id='frm-emp-slidetoggle'>
+            <legend>Emp</legend>
+            <input type="text" id="email1" />
+            <input type="text" id="email2" />
+            <input type="text" id="email3" />
+        </fieldset>
     </body>
     
 </html>
