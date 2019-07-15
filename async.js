@@ -10,9 +10,9 @@ const getUsers = () =>{
         console.log(result);
         result.forEach((u)=>{
             rows += `<tr>
-                        <th>${u.employee_name}</th>
-                        <th>${u.employee_salary}</th>
-                        <th><img src="${u.profile_image}" /></th>
+                        <td>${u.employee_name}</td>
+                        <td>${u.employee_salary}</td>
+                        <td><img src="${u.profile_image}" /></td>
                     </tr>`
         });
         document.getElementById('users').innerHTML = `<table>

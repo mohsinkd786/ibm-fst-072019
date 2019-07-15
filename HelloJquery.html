@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script src="jquery-3.41.js" type="text/javascript"></script>
+        <script src="hellojquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    //onload function
+    $(document).ready(()=>{
+        console.log('jquery onload/ready called');
+    
+        $('#save').click(()=>{
+            //let email = document.getElementById('email').value;
+            //document.getElementById('email').value = 'hello';
+            // get text box value
+            let email = $('#email').val();
+            alert(`Email is : ${email}`);
+            //set textbox value
+            $('#email').val('hello@mm.com');
+            //set focus within textbox
+            $('#email').focus();
+        });
+
+        // access by css class
+        $('div.update').click(()=>{
+            console.log('div.update');
+            $('#email').val('updated@mm.com');
+        });
+        // access by css class
+        $('div#reset').click(()=>{
+            $('#email').val('reset@mm.com');
+        });
+        // click event by an element type
+        
+        $('div').click(()=>{
+            console.log('div 1');
+            $('#email').val('event-div@mm.com');
+        });
+        
+        $('div').click(()=>{
+            console.log('div');
+            $('#email').val('div-event@mm.com');
+        });
+    });
+    </script>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="email" />
+            <input type="button" id="save" value="Save" />
+            <input type="button" class='update' value="Update" />
+        </div>
+        <div id="update">
+            HELLO how r u what is going on....
+            HELLO how r u what is going on....
+            HELLO how r u what is going on....
+            HELLO how r u what is going on....
+            HELLO how r u what is going on....
+        </div>
+        <div id="reset">
+            Hola ssup....
+            HELLO how r u what is going on....
+            HELLO how r u what is going on....
+            HELLO how r u what is going on....
+            HELLO how r u what is going on....
+        </div>
+    </body>
+    
+</html>
