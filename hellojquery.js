@@ -3,6 +3,8 @@ $(document).ready(()=>{
     console.log('jquery onload/ready called');
 
     $('#save').click(()=>{
+        // remove a class
+        $('#email').removeClass('input');
         //let email = document.getElementById('email').value;
         //document.getElementById('email').value = 'hello';
         // get text box value
@@ -66,5 +68,30 @@ $(document).ready(()=>{
     });
     $('#btn-emp-fade-in').click(()=>{
         $('#frm-emp-slidetoggle').fadeIn(1000);
+    });
+    $('#email').click(()=>{
+        // add css class
+        $('#email').addClass('input');
+
+        // apply styling via jquery
+        /*$('#email').css({
+            'background-color':'d4bb9a',
+            'border': '2px solid red'
+        }); */
+    });
+    // trigger only once
+    $(':text').one('click',()=>{
+        $(':text').val('Hello Text field');
+    });
+
+    $(':text').click(()=>{
+        // explicit styling based on type of input
+        // via id / css class
+        // by id : :text#email2
+        // by class : :text.email2
+        $(':text#email2').css({
+            'background-color':'green',
+            'border': '2px solid red'
+        });
     });
 });
