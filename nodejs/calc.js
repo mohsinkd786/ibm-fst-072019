@@ -29,7 +29,7 @@ class CalculatorListener {
 
 const calcListner = new CalculatorListener();
 
-emitter.addListener('calculatorListener',calcListner._execute);
+emitter.addListener('calcListener',calcListner._execute);
 module.exports = {
    calcEmitter : emitter
 }
