@@ -186,5 +186,4 @@ $(document).ready(()=>{
     $('.test').filter(':even').each((i,e)=>{
         console.log(e);
     });
-
 });
