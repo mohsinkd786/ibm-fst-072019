@@ -94,4 +94,97 @@ $(document).ready(()=>{
             'border': '2px solid red'
         });
     });
+    // each
+    /*$('div.test').each((index,element)=>{
+        $(element).css({'background-color':'red'});
+    });*/
+    
+    /*$('.test').each((index,element)=>{
+        console.log(index);
+        console.log(element);
+        //$(element).add('span:inner');
+        $(element).css('border','1px solid');
+    });*/
+
+    // siblings
+    console.log('SIBLINGS');
+    $('#last').siblings().each((i,e)=>{
+        console.log(e);
+    });
+    // parents
+    console.log('PARENTS');
+    $('#last').parents().each((i,e)=>{
+        console.log(e);
+    });
+    // parent
+    console.log('FATHER');
+    $('#last').parent().css({'background-color':'red'});
+
+    // Next neighbour
+    console.log('NEXT NEIGHBOUR')
+    $('#last').next().css({'background-color':'green'});
+
+    // Next ALL neighbour
+    console.log('NEXT ALL NEIGHBOUR')
+    $('#last').nextAll().each((i,e)=>{
+        $(e).css({'font-style':'italic'});
+    })
+
+    // Prev neighbour
+    console.log('PREVIOUS NEIGHBOUR')
+    $('#last').prev().css({'background-color':'white'});
+
+    // Prev ALL neighbour
+    console.log('PREVIOUS ALL NEIGHBOUR')
+    $('#last').prevAll().each((i,e)=>{
+        $(e).css({'font-weight':'bold'});
+    })
+
+    // Not 
+    // skip an element
+    $('.test').not('span').each((i,e)=>{
+        console.log(e);
+    })
+    // 
+    console.log('FIRST');
+    $('.test').first().each((i,e)=>{
+        console.log(e);
+    })
+    console.log('LAST');
+    $('.test').last().each((i,e)=>{
+        console.log(e);
+    })
+    $('#map').click(()=>{
+        console.log('MAP');
+        let ids = $('.txt').map((i,e)=>{
+            // update text field value
+            $(e).attr('value',$(e).attr('value')+'55')
+            return $(e).attr('id');
+
+        }).get().join(', ');
+        console.log(ids);
+    })
+    console.log('FIND ');
+    // get childs / descendants
+    $('#childs').find('*').each((i,e)=>{
+        console.log(e);
+    });
+
+    console.log('CHILDREN ');
+    $('#childs').children('*').each((i,e)=>{
+        console.log(e);
+    });
+
+    // access via explicit index
+    console.log('EQUALS ');
+    $('#childs').children('.test').eq(1).each((i,e)=>{
+        console.log(e);
+    });
+
+    // find based on a specific criteria
+    console.log('FILTER ');
+    $('.test').filter(':even').each((i,e)=>{
+        console.log(e);
+    });
+
 });
