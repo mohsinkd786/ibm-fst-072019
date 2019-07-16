@@ -1,7 +1,8 @@
-const calc = require('./calc').Calc;
-// create object for imported class
-const _obj = new calc();
-let i = parseInt(process.argv[2] || '5');
-let j = parseInt(process.argv[3] || '6');
+const Calc = require('./calc').Calculator;
+const obj = new Calc();
 
-console.log(`SUM is ${_obj._add(i,j)}`);
+// process object to access arguments
+//process.argv
+let _first = parseInt(process.argv[2] || '5');
+let _next = parseInt(process.argv[3] || '7');
+console.log(obj._add(_first,_next));

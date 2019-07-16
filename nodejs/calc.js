@@ -9,10 +9,13 @@ class Calculator{
         return i * j;
     }
 }
-const execute = ()=>{
-    console.log('Execute ()');
+
+class Custom {
+    _execute(){
+        console.log('Execute');
+    }
 }
+
 module.exports = {
-    Calc : Calculator,
-    process : execute
+    Calculator
 }
