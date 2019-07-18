@@ -1,0 +1,1 @@
+console.log('Index file with hello-npm ahjasjhsja');

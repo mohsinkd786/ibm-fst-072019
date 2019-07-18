@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Login </title>
+        <script type="text/javascript">
+        const login = ()=>{
+            const user = document.getElementById('user').value;
+            const pass = document.getElementById('pass').value;
+            const _url = `http://localhost:5544/login?user=${user}&pass=${pass}`;
+            // make call to fetch api 
+            // interact with nodejs server
+            fetch(_url)
+            .then(res=>res.json())
+            .then((res)=>{
+                if(res.id !=null){
+                    document.location = 'Home.html'
+                }else{
+                    document.getElementById('login-error').innerText = 'Invalid Login Credentials';
+                }
+                console.log(res);
+            });
+        }
+        </script>
+        <style>
+        input {
+            display: block;
+            margin-bottom: 5px;
+        }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="user" placeholder="username..."/>
+        <input type="password" id="pass" placeholder="password..."/>
+        <input type="button" value="Login" onclick="login()"/>
+        <span id='login-error' style="color:red"></span>
+    </body>
+</html>
