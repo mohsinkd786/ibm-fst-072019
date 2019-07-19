@@ -18,6 +18,15 @@ server.get('/status',(req,res)=>{
     }));
 });
 
+// access query params
+// /message?name=Mohsin&email=tech@gma.com
+server.get('/message',(req,res)=>{
+    setContentHeader(res);
+    res.end(JSON.stringify({
+        name : req.query.name,
+        email : req.query.email
+    }));
+});
 // un authorized access api
 server.get('/unauthorize',(req,res)=>{
     setContentHeader(res);
