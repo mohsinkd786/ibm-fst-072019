@@ -1,6 +1,5 @@
 const projects = require('../db/projects').projects;
 class ProjectService{
-    projects=[];
     constructor(){
         this.projects = projects;
     }

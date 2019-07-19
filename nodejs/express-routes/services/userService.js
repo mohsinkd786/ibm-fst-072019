@@ -1,6 +1,5 @@
 const users = require('../db/users').users;
 class UserService{
-    users=[];
     constructor(){
         this.users = users;
     }
