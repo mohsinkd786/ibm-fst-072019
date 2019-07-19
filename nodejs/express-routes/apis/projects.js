@@ -1,10 +1,11 @@
 const server = require('express').Router();
 const PService = require('../services/projectService').ProjectService;
 const projectService = new PService();
+const setContentHeader = require('../services/utils').setContentHeader;
 
 // get all projects
 server.get('/',(req,res)=>{
-    res.setHeader('content-type','application/json');
+    setContentHeader(res);
     res.end(JSON.stringify({
         projects : projectService._all()
     }));
@@ -12,7 +13,7 @@ server.get('/',(req,res)=>{
 
 // add a new project
 server.post('/add',(req,res)=>{
-    res.setHeader('content-type','application/json');
+    setContentHeader(res);
     res.end(JSON.stringify({
         projects : projectService._add(req.body)
     }));

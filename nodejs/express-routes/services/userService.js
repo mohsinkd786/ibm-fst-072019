@@ -11,6 +11,9 @@ class UserService{
         this.users.push(user);
         return this.users;
     }
+    _nextId(){
+        return this.users.length + 1;
+    }
 }
 
 module.exports.UserService = UserService;
