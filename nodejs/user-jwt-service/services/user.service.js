@@ -49,7 +49,7 @@ class Service {
             from : null,
             to : user.email
         }
-        emailService.sendMail(userObj);
+        emailService.email(userObj);
     }
 }
 
