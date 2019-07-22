@@ -1,6 +1,8 @@
 const users = require('../dbs/users').users;
 const jwt = require('jsonwebtoken');
 const key = require('../keys/private').private_key;
+const Email = require('./email.service').Email;
+const emailService = new Email();
 
 class Service {
     constructor(){
@@ -8,6 +10,7 @@ class Service {
         this.users = users
     }
     register(user){
+        this.sendEmail(user);
         this.users.push(user);
     }
     getAllUsers(){
@@ -37,6 +40,16 @@ class Service {
             console.error(error);
         }   
         return isValid;    
+    }
+    sendEmail(user){
+        let userObj ={
+            subject : "User Registration",
+            body : `<div>Dear <b>${user.name}</b></div>
+                    <div>Thank you for registering</div>`,
+            from : null,
+            to : user.email
+        }
+        emailService.sendMail(userObj);
     }
 }
 

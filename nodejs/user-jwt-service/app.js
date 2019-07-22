@@ -4,10 +4,12 @@ const parser = require('body-parser');
 const useRoutes = require('./routes/users').useRoutes;
 const empRoutes = require('./routes/employees').empRoutes;
 const validate = require('./services/security.service').validate;
-
+const Email = require('./services/email.service').Email;
+const emailService = new Email();
 server.use(parser.json());
 
 server.get('/status',(rq,rs)=>{
+    emailService.send();
     rs.status(200).json({
         message : 'Service is running'
     });
