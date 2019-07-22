@@ -10,7 +10,7 @@ class Service {
         this.users = users
     }
     register(user){
-        this.sendEmail(user);
+        this.email(user);
         this.users.push(user);
     }
     getAllUsers(){
@@ -41,7 +41,7 @@ class Service {
         }   
         return isValid;    
     }
-    sendEmail(user){
+    email(user){
         let userObj ={
             subject : "User Registration",
             body : `<div>Dear <b>${user.name}</b></div>
