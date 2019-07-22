@@ -33,5 +33,33 @@ class Email {
             }
         })
     }
+    emailWithAttachment(userObj){
+        // in case sender isnt mentioned
+        if(userObj.from == null){
+            userObj.from = utils.smtp.address;
+        }
+        this.mailer.sendMail({
+            from : userObj.from,
+            to : userObj.to,
+            subject : userObj.subject,
+            /*text : emailBody, */
+            html : userObj.body,
+            attachments: [
+                {
+                    filename : 'hello.txt',
+                    path : __dirname +'/' +'abc.txt'
+                    /*,content: 'Hello how r u' */
+                }
+            ] 
+        },(err,response)=>{
+            if(err){
+                console.log(err);
+                return "Unable to send email";
+            }else{
+                console.log('Email Sent');
+                return "Email Sent Successfully";
+            }
+        })
+    }
 }
 module.exports.Email = Email;
