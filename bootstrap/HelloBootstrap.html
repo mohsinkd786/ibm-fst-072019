@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hello | Bootstrap
+        </title>
+        <meta charset="utf-8">
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> 
+    </head>
+    <body>
+        <header>
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link btn-primary"> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> About us</a>
+                </li>
+            </ul>
+            <ul class="nav nav-tabs">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link"> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> About us</a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link"> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> About us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> Services</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="#" class="nav-link"> Services 1</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="nav-link"> Services 2</a>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </header>
+        <div class="container">
+            Hello how r u
+            <div class='row'>
+                <div class='col-2'>
+                    <div class="row">
+                        Hello Col 1
+                    </div>
+                </div>
+                <div class='col-8'>
+                    <div class="row alert alert-primary">
+                            Register
+                    </div>
+                    <div class="row">
+                            <form>
+                                <div class="form-group">
+                                    <label for="uname" class="col-form-label">User Name</label>
+                                    <input type="text" class="form-control form-control-lg is-valid" id="uname"  placeholder="Username.."/>
+                                    <div class="valid-feedback">
+                                        Username is mandatory
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pass">Password</label>
+                                    <input type="password" class="form-control form-control-sm is-invalid" id="pass" placeholder="Password.." />
+                                    <small class="form-text text-muted">Password should have atleast one capital alphabet & number e.g.(India@123)</small>
+                                    <div class="invalid-feedback">
+                                        Password is required
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pass">Plain Text</label>
+                                    <div class="input-group">
+                                        <div class="input-group-pretext">
+                                            <div class="input-group-text">
+                                                $
+                                            </div>
+                                        </div>
+                                    <input type="text" class="form-control-plaintext" placeholder="Plain Text.." />
+                                </div>
+                                <small class="form-text text-muted">Password should have atleast one capital alphabet & number e.g.(India@123)</small>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" value="M" class="form-check-input" /> 
+                                        <label class="form-check-label">Male</label>                        
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" value="F" class="form-check-input" />
+                                    <label class="form-check-label">Female</label>
+                                </div>
+                                <!-- Buttons -->
+                                <div class="form-group">
+                                    <input type="button" class="btn btn-primary" value="LOGIN" />
+                                    <input type="button" class="btn btn-info" value="UPDATE" />
+                                    <input type="button" class="btn btn-secondary" value="RESET"/>
+                                    <input type="button" class="btn btn-danger" value="DELETE"/>
+                                    <input type="button" class="btn btn-warning" value="EDIT"/>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+                <div class='col-2'>
+                        <h2> ALERTS</h2>
+                        <div class="row">
+                            <div class="alert alert-primary">
+                                Hello Bootstrap
+                            </div>
+                            <div class="alert alert-danger">
+                                We hate Bootstrap
+                            </div>
+                            <div class="alert alert-warning">
+                                We dont really prefer Bootstrap
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row alert alert-primary">
+                    Contact us
+            </div>
+            <div class="row">
+                <div class="form-row">
+                    <div class="col">
+                            <input type="text" class="form-control"  placeholder="Email.."/>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control"  placeholder="comments.."/>
+                    </div>
+                </div>
+            </div>
+            <form class="needs-validation" novalidate>
+                    <div class="form-row">
+                      <div class="col">
+                        <label for="pass">Password</label>
+                        <input type="text" class="form-control" id="pass" placeholder="Pass" required>
+                        <div class="valid-tooltip">
+                          Password cannot be left blank
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                  </form>
+        </div>
+
+        <div class="row">
+            <div class="col">
+        <div class="row offset-2">
+            <div class="card border-primary">
+                <h6 class="card-header bg-secondary">LOGIN</h6>
+                <div class="card-body text-success">
+                    <!--<h6 class="card-title">Hola</h6>-->
+                    <p class="card-text">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username.."/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Password.."/>
+                        </div>
+                        <button class="btn btn-primary" type="submit">LOGIN</button>
+                    </p>
+                    <div class="card-footer">
+                        <small>Please login here</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row offset-4">
+            <span class="badge badge-primary">Users <sup class="badge badge-secondary">33</sup></span>
+        </div>
+        </div>
+        <!-- ARIA Tabs-->
+        <div class="col">
+        <nav>
+            <div class="nav nav-tabs">
+                <a href="#aboutus" data-toggle="tab" class="nav nav-item active">About us</a>
+                <a href="#contactus" data-toggle="tab" class="nav nav-item">Contact us</a>
+                <a href="#services" data-toggle="tab"class="nav nav-item">Services</a>
+            </div>
+            <div class="tab-content" id="tabs">
+                  <div class="tab-pane" id="aboutus"> About us</div> 
+                  <div class="tab-pane" id="contactus"> Contact us</div> 
+                  <div class="tab-pane show active" id="services"> Services</div>  
+            </div>
+        </nav>
+        </div>
+        </div>
+    </body>
+</html>
