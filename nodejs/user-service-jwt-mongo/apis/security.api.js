@@ -86,7 +86,7 @@ server.post('/token/refresh',(rq,rs)=>{
                 const _user = {
                     id : 1,
                     token : _token,
-                    email : rq.body.email
+                    email : data.email
                 }
                 securityService.saveToken(_user,(err,data)=>{
                     if(err){
