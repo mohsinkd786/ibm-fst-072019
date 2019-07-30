@@ -39,25 +39,31 @@ server.post('/token',(rq,rs)=>{
                     message: 'Please specify valid credentials'
                 });
             }else{
-                // generate jwt token
-                const _token = securityService.generateToken(rq.body.email);
-                const _user = {
-                    id : 1,
-                    token : _token,
-                    email : rq.body.email
-                }
-                securityService.saveToken(_user,(err,data)=>{
-                    if(err){
-                        rs.status(401).json({
-                            message: 'Unable to process your request'
-                        });
-                    }else{
-                        rs.status(200).json({
-                            message : 'Token Generated Successfully',
-                            token : _token
-                        });
+                if(res){
+                    // generate jwt token
+                    const _token = securityService.generateToken(rq.body.email);
+                    const _user = {
+                        id : 1,
+                        token : _token,
+                        email : rq.body.email
                     }
-                });
+                    securityService.saveToken(_user,(err,data)=>{
+                        if(err){
+                            rs.status(401).json({
+                                message: 'Unable to process your request'
+                            });
+                        }else{
+                            rs.status(200).json({
+                                message : 'Token Generated Successfully',
+                                token : _token
+                            });
+                        }
+                    });
+                }else{
+                    rs.status(401).json({
+                        message: 'Please specify valid credentials'
+                    });
+                }
             }
         });
     }

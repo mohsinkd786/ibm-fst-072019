@@ -8,7 +8,7 @@ class Service {
         const hashPassword = this.generateHash(_pass);
         const _url = UserConstants.mongo.url + UserConstants.mongo.port;
         client.connect(_url,(err,connection)=>{
-            connection.db(UserConstants.mongo.db).collection(UserConstants.mongo.collections.user).find({email: _user, password : _pass}).toArray((err,response)=>{
+            connection.db(UserConstants.mongo.db).collection(UserConstants.mongo.collections.user).find({email: _user, password : hashPassword}).toArray((err,response)=>{
                 callback(err,response);
             });
         });
