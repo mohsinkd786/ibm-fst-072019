@@ -6,6 +6,7 @@ class Service {
     // verify user
     fetchUser(_user,_pass,callback){
         //const hashPassword = this.generateHash(_pass);
+        //bcrypt.compareSync(_pass);
         const _url = UserConstants.mongo.url + UserConstants.mongo.port;
         client.connect(_url,(err,connection)=>{
             connection.db(UserConstants.mongo.db).collection(UserConstants.mongo.collections.user).find({email: _user}).toArray((err,response)=>{

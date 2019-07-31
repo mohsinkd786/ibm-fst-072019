@@ -39,7 +39,7 @@ server.post('/token',(rq,rs)=>{
                     message: 'Please specify valid credentials'
                 });
             }else{
-                if(res){
+                if(res !=undefined && res.length > 0){
                     // generate jwt token
                     const _token = securityService.generateToken({
                         email : res[0].email,
@@ -85,29 +85,34 @@ server.post('/token/refresh',(rq,rs)=>{
                     message : 'Token expired or Invalid'
                 });
             }else{
-                console.log(data);
-                // generate jwt token
-                const _token = securityService.generateToken({
-                    email : data[0].email,
-                    access : data[0].access
-                });
-                const _user = {
-                    id : 1,
-                    token : _token,
-                    email : data.email
+                    if(data !=undefined && data.length > 0){
+                        // generate jwt token
+                        const _token = securityService.generateToken({
+                            email : data[0].email,
+                            access : data[0].access
+                        });
+                        const _user = {
+                            id : 1,
+                            token : _token,
+                            email : data[0].email
+                        }
+                        securityService.saveToken(_user,(err,result)=>{
+                            if(err){
+                                rs.status(401).json({
+                                    message: 'Unable to process your request'
+                                });
+                            }else{
+                                rs.status(200).json({
+                                    message : 'Token refreshed Successfully',
+                                    refreshToken : _token
+                                });
+                            }
+                        });
+                }else{
+                    rs.status(403).json({
+                        message: 'Token expired or Invalid'
+                    });
                 }
-                securityService.saveToken(_user,(err,data)=>{
-                    if(err){
-                        rs.status(401).json({
-                            message: 'Unable to process your request'
-                        });
-                    }else{
-                        rs.status(200).json({
-                            message : 'Token refreshed Successfully',
-                            refreshToken : _token
-                        });
-                    }
-                });
             }
         });
     }
