@@ -10,7 +10,8 @@ const UserConstants = {
         }
     },
     jwt :{
-        key : 'thisisourjwtprivatekey'
+        key : 'thisisourjwtprivatekey',
+        salt: '$2b$10$X4kv7j5ZcG39WgogSl16au'
     }
 }
 
