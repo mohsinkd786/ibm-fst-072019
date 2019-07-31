@@ -5,14 +5,20 @@ const jwt = require('jsonwebtoken');
 class Service {
     // authorize
     authorize (request,response,next){
-        const _token =request.headers.token;
+        const _token = request.headers.token;
         if(!_token){
             // stop access
             response.redirect('/auth/unauthorize');
         }else{
-            if(this.verifyToken(_token)){
+            const _tDetails = this.verifyToken(_token);
+            if(_tDetails){
                 // continue the flow
-                next();
+                const _path = request.baseUrl + request.path;
+                if(_tDetails.access == _path){
+                    next();
+                }else{
+                    response.redirect('/auth/unauthorize');
+                }
             }else{
                 // stop access
                 response.redirect('/auth/unauthorize');
@@ -33,10 +39,10 @@ class Service {
         return validToken;
     }
     // create jwt token 
-    generateToken(email){
-        const _token = jwt.sign({
-            email : email
-        },
+    generateToken(_user){
+        const _token = jwt.sign(
+            _user
+        ,
         UserConstants.jwt.key,{
             expiresIn : '120000ms'
         });

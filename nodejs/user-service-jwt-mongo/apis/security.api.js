@@ -41,11 +41,15 @@ server.post('/token',(rq,rs)=>{
             }else{
                 if(res){
                     // generate jwt token
-                    const _token = securityService.generateToken(rq.body.email);
+                    const _token = securityService.generateToken({
+                        email : res[0].email,
+                        access : res[0].access
+                    });
                     const _user = {
                         id : 1,
                         token : _token,
-                        email : rq.body.email
+                        email : res[0].email,
+                        access : res[0].access
                     }
                     securityService.saveToken(_user,(err,data)=>{
                         if(err){
@@ -81,8 +85,12 @@ server.post('/token/refresh',(rq,rs)=>{
                     message : 'Token expired or Invalid'
                 });
             }else{
+                console.log(data);
                 // generate jwt token
-                const _token = securityService.generateToken(data.email);
+                const _token = securityService.generateToken({
+                    email : data[0].email,
+                    access : data[0].access
+                });
                 const _user = {
                     id : 1,
                     token : _token,

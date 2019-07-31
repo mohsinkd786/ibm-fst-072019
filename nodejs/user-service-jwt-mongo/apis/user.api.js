@@ -9,13 +9,13 @@ server.get('/status',(rq,rs)=>{
 
 server.get('/',(rq,rs)=>{
     rs.status(200).json({
-        data : "USers"
+        data : "Users"
     });
 });
 
 server.post('/add',(rq,rs)=>{
     rs.status(200).json({
-        data : "USers"
+        data : "Users"
     });
 });
 

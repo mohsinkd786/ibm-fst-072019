@@ -9,6 +9,12 @@ server.get('/status',(rq,rs)=>{
     });
 });
 
+server.post('/add',(rq,rs)=>{
+    rs.json({
+        message : 'Product Add'
+    });
+});
+
 server.get('/',(rq,rs)=>{
     pService.fetchProducts((err,products)=>{
         if(err){

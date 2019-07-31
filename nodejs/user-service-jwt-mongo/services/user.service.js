@@ -5,10 +5,10 @@ const bcrypt = require('bcrypt');
 class Service {
     // verify user
     fetchUser(_user,_pass,callback){
-        const hashPassword = this.generateHash(_pass);
+        //const hashPassword = this.generateHash(_pass);
         const _url = UserConstants.mongo.url + UserConstants.mongo.port;
         client.connect(_url,(err,connection)=>{
-            connection.db(UserConstants.mongo.db).collection(UserConstants.mongo.collections.user).find({email: _user, password : hashPassword}).toArray((err,response)=>{
+            connection.db(UserConstants.mongo.db).collection(UserConstants.mongo.collections.user).find({email: _user}).toArray((err,response)=>{
                 callback(err,response);
             });
         });
