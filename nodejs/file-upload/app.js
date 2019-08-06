@@ -3,8 +3,8 @@ const server = express();
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: 'uploads' ,
-    filename: (rq, file, cb) => {
-      cb(null, Date.now() + '-'+ file.originalname)
+    filename: (rq, file, callback) => {
+      callback(null, Date.now() + '-'+ file.originalname)
     }
 });
 
@@ -13,7 +13,6 @@ server.get('/app',(rq,rs)=>{
     rs.sendFile(__dirname +'/app.html');
 });
 server.post('/upload',upload.single('profile'),(rq,rs,next)=>{
-    console.log(rq.file);
     rs.json({
         message : "Image Uploaded Successfully"
     })
