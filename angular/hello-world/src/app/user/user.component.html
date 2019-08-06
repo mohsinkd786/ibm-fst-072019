@@ -1,0 +1,27 @@
+<b>{{message}}</b>
+<div *ngFor="let u of users">
+{{u}}
+</div>
+
+<div *ngIf="showTable; then yes else no"></div>
+    <ng-template #yes>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employees">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-template>
+    <ng-template #no>
+        {{noRecordsMsg}}
+    </ng-template>
