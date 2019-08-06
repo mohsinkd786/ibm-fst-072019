@@ -69,3 +69,42 @@ console.log(_car.getDetails());
 const _volvo = new Suv(11,'Volvo');
 console.log(_volvo.getDetails());
 
+function test<T> (abc: T):T {
+    return abc;
+}
+
+test<string>("Hello");
+
+const test1 = <T extends number> (aa: T)=>{
+    console.log(typeof aa);
+    return aa;
+}
+
+test1<number>(10);
+
+interface AA{
+    name:string
+}
+interface BB{
+    names: AA[][]
+}
+
+const bbS :BB = {
+    names :[
+            [
+            {
+                name : "One"
+            },
+            {
+                name : "Two"
+            }
+        ]
+    ]
+}
+
+console.log(bbS.names);
+
+// flat the array
+//speard operator
+const newNames = [].concat(...bbS.names);
+console.log(newNames);
