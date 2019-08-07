@@ -37,10 +37,16 @@ export class EmployeesComponent implements OnInit {
   
   }
   clickMe(){
+    const dt = new Date();
+    //dt.getMilliseconds();
+    dt.setFullYear(2018);
+    dt.setDate(11);
+    dt.setMonth(0);
+
     this.emps.push({
       id: 4,
       name: 'Zack',
-      dob: new Date()
+      dob: dt
     });
     // send data to App Component
     this._empDetails.emit(this.emps[0]);
