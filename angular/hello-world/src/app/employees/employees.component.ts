@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { UserService } from '../user.service';
+import { Emp } from '../structures/Emp';
 
 @Component({
   selector: 'app-employees',
@@ -7,9 +9,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class EmployeesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private uService: UserService) { }
 
-  emp:any
   emps:Emp[]
   
   @Input() message:string
@@ -17,43 +18,12 @@ export class EmployeesComponent implements OnInit {
   @Output() _empDetails = new EventEmitter(); 
 
   ngOnInit() {
-  this.emps =[
-    {
-      id: 1,
-      name: 'John',
-      dob: new Date()
-    },
-    {
-      id: 2,
-      name: 'Martin',
-      dob: new Date()
-    },
-    {
-      id: 3,
-      name: 'Bob',
-      dob: new Date()
-    }
-  ]
-  
+    this.emps = this.uService.getUsers();
   }
-  clickMe(){
-    const dt = new Date();
-    //dt.getMilliseconds();
-    dt.setFullYear(2018);
-    dt.setDate(11);
-    dt.setMonth(0);
 
-    this.emps.push({
-      id: 4,
-      name: 'Zack',
-      dob: dt
-    });
+  clickMe(){
+    this.emps = this.uService.addUser();
     // send data to App Component
     this._empDetails.emit(this.emps[0]);
   }
-}
-export interface Emp {
-  id:number
-  name:string
-  dob:Date
 }
