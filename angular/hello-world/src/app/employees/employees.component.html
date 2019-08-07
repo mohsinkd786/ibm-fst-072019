@@ -1,0 +1,24 @@
+<br/>
+<b>PARENT MESSAGE IS :</b> {{message}}
+<br />
+<table>
+    <thead>
+        <tr>
+            <th>S.no</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of emps">
+            <td>{{e.id}}</td>
+            <td>{{e.id | power: 2 }}, {{e.id | sqroot }}</td>
+            <td>{{e.name | uppercase }}</td>
+            <td>{{e.dob | date:"MM/dd/yy"}}</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+
+<input type="button" (click)="clickMe()" value="Click Me!" />
