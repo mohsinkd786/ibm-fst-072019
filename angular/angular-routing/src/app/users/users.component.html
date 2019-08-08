@@ -1,5 +1,16 @@
 <p>users works!</p>
-
+<table *ngIf="users"> 
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+    </tr>
+    <tr *ngFor="let u of users">
+        <td>{{u.id}}</td>
+        <td>{{u.name}}</td>
+        <td>{{u.email}}</td>
+    </tr>
+</table>
 <input type="button" value="Edit" (click)="redirect()"/>
 
 <input type="button" value="Goto Query" (click)="redirectToQueryParams()" />
@@ -20,3 +31,13 @@
         <input type="submit" value="Register" />
     </form>
 </fieldset>   
+<fieldset>
+    <legend>Reactive Form</legend>
+    <span *ngIf="signupFrm.status == 'INVALID' " style="color:red">{{validError}}</span>
+    <form [formGroup]="signupFrm" (submit)="signUp()" novalidate >
+        <input type="text" name="email" formControlName="email" placeholder="Email"/><sup style="color:red">*</sup><span *ngIf="signupFrm.controls['email'].errors" style="color:red">Email is required</span> <br/>
+        <input type="text" name="street" formControlName="street" placeholder="Street"/><sup style="color:red">*</sup>
+        <span *ngIf="signupFrm.controls['email'].errors" style="color:red">Street is required</span> <br/>
+        <input type="submit" value="Sign Up"/>
+    </form>
+</fieldset>

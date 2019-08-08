@@ -11,7 +11,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { EditComponent } from './edit/edit.component';
 import { QueryparamComponent } from './queryparam/queryparam.component';
 import { ProjectModule } from './project/project.module';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { FormsModule } from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     ProjectModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
