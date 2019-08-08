@@ -16,6 +16,9 @@ export class UsersComponent implements OnInit {
   }
 
   redirect(){
-    this.router.navigate(['edit',this.route.snapshot.params.id]);
+    this.router.navigate(['edit'],{ queryParams:{ id: this.route.snapshot.params.id }});
+  }
+  redirectToQueryParams(){
+    this.router.navigate(['/params'], { queryParams: {id:7 , name:'ibm' } });
   }
 }

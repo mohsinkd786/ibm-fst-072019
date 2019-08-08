@@ -8,8 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { TopmenuComponent } from './topmenu/topmenu.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { RouterModule } from '@angular/router';
 import { EditComponent } from './edit/edit.component';
+import { QueryparamComponent } from './queryparam/queryparam.component';
+import { ProjectModule } from './project/project.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,13 @@ import { EditComponent } from './edit/edit.component';
     UsersComponent,
     TopmenuComponent,
     NotfoundComponent,
-    EditComponent
+    EditComponent,
+    QueryparamComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ProjectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

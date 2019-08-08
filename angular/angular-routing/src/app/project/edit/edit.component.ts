@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -8,10 +7,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  constructor(private route : ActivatedRoute) { }
+  constructor() { }
 
-  uId:string
   ngOnInit() {
-    this.uId = this.route.snapshot.queryParams.id;
   }
+
 }
