@@ -29,7 +29,6 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/params'], { queryParams: {id:7 , name:'ibm' } });
   }
   login(_data){
-    console.log('User Logged In');
     console.log(_data);
     this.registerObj.name = _data.user
     this.registerObj.cell = _data.pass
