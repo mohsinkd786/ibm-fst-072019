@@ -10,6 +10,7 @@ import { ProjectRoutingModule } from './project-routing.module';
   declarations: [ListComponent, AddComponent, EditComponent],
   imports: [
     CommonModule
+    //,ProjectRoutingModule
   ]
 })
 export class ProjectModule { }
