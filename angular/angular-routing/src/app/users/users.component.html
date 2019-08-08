@@ -3,3 +3,20 @@
 <input type="button" value="Edit" (click)="redirect()"/>
 
 <input type="button" value="Goto Query" (click)="redirectToQueryParams()" />
+<hr/>
+<fieldset>
+    <legend>One Way Binding</legend>
+    <form #loginFrm="ngForm" (submit)="login(loginFrm.value)" >
+        <input type="text" placeholder="username" name="user" ngModel /> <br/>
+        <input type="password" placeholder="password" name="pass" ngModel /> <br/>
+        <input type="submit" value="Login" />
+    </form>
+</fieldset>
+<fieldset>
+    <legend>Two Way Binding</legend>    
+    <form #registerForm="ngForm" (submit)="registerAndLogin()">
+        <input type="text" placeholder="Name" name="name" [(ngModel)]="registerObj.name" /> <br/>
+        <input type="number" placeholder="Cell" name="cell" [(ngModel)]="registerObj.cell" /> <br/>
+        <input type="submit" value="Register" />
+    </form>
+</fieldset>
