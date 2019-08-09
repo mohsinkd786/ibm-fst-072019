@@ -27,8 +27,6 @@ describe('UserService', () => {
     }
     service.addUser(user);
     const _usrs = service.getUsers();
-    console.log(_usrs);
-    
     const _userCreated = service.findUserById(user.id);
     expect(_userCreated).toBe(user);
 

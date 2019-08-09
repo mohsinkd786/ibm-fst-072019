@@ -19,7 +19,7 @@ export class UserService {
     ]
   }
 
-  getUsers(){
+  getUsers():User[]{
     return this.users;
   }
   addUser(_usr:User){
