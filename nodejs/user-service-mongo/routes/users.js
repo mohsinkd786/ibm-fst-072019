@@ -33,6 +33,41 @@ routes.post('/add',(rq,rs)=>{
     });
 });
 
+// find user by id
+routes.get('/:id',(rq,rs)=>{
+    userService.findById(rq.params.id,(err,user)=>{
+        if(err){
+            rs.status(400).json({
+                message : 'Unable to process the request',
+                error : err
+            });
+        }else{
+            rs.status(200).json({
+                user : user
+            });
+        }
+    });
+});
+
+//
+routes.get('/asy/user/:id',(rq,rs)=>{
+    userService
+        .getUserById(rq.params.id)
+        .then(_usr=>{
+            rs.json({
+                message : 'Hello',
+                userDetails: _usr
+            });
+        })
+        .catch(err=>{
+            console.log(err);
+            rs.json({
+                message : 'Unable to get User Details'
+            });
+        })
+
+    
+})
 module.exports = {
     userRoutes : routes
 }

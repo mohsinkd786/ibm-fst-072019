@@ -1,7 +1,10 @@
 const UserConstants = {
     mongo : {
         url :  'mongodb://localhost:27017',
-        db : 'ibm_training' 
+        db : 'ibm_training',
+        collections :{
+            users : 'users'
+        }
     },
     messages : {
         mainStatus : 'Service is running',
