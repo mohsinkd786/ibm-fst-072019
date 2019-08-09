@@ -49,7 +49,7 @@ describe('AppComponent', () => {
 
   it('should get redirected to ',fakeAsync( ()=>{
     router.navigate(['']).then(()=>{
-      tick(10); 
+      tick(10);
       expect(location.path()).toBe('/home');
     });
   }));
