@@ -27,7 +27,6 @@ class UserService {
             .collection(UserConstants.mongo.collections.users)
             .find({ _id : id})
             .toArray((error,users)=>{
-                console.log(users);
                 callback(error,users);
             });
         })
@@ -46,7 +45,7 @@ class UserService {
             .toArray();
             // end of to array
         }).catch(err=>{
-            console.log('Unable to establish the connection');
+            console.error('Unable to establish the connection');
         });
     }  
 }
