@@ -1,6 +1,7 @@
 const routes = require('express').Router();
 const UserService = require('../services/user.service').UserService;
 const userService = new UserService();
+const _addItem = require('../services/mongoose.service')._add;
 const UserConstants = require('../utils/utils').UserConstants;
 
 routes.get('/status',(rq,rs)=>{
@@ -51,6 +52,15 @@ routes.get('/:id',(rq,rs)=>{
 
 //
 routes.get('/asy/user/:id',(rq,rs)=>{
+    // mongoose call
+    _addItem()
+    .then(_res=>{
+        console.log('Item Saved');
+    })
+    .catch(err=>{
+        console.error('Error Occured');
+    });
+
     userService
         .getUserById(rq.params.id)
         .then(_usr=>{
