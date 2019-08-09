@@ -33,11 +33,18 @@
 </fieldset>   
 <fieldset>
     <legend>Reactive Form</legend>
-    <span *ngIf="signupFrm.status == 'INVALID' " style="color:red">{{validError}}</span>
     <form [formGroup]="signupFrm" (submit)="signUp()" novalidate >
-        <input type="text" name="email" formControlName="email" placeholder="Email"/><sup style="color:red">*</sup><span *ngIf="signupFrm.controls['email'].errors" style="color:red">Email is required</span> <br/>
-        <input type="text" name="street" formControlName="street" placeholder="Street"/><sup style="color:red">*</sup>
-        <span *ngIf="signupFrm.controls['email'].errors" style="color:red">Street is required</span> <br/>
-        <input type="submit" value="Sign Up"/>
+            <span *ngIf="signupFrm.status == 'INVALID' " class="alert alert-danger">{{validError}}</span>
+        <div class="form-group">
+            <input type="text" name="email" formControlName="email" placeholder="Email"/>
+            <sup style="color:red" class="form-control">*</sup>
+            <span *ngIf="signupFrm.controls['email'].errors" class="alert alert-danger">Email is required</span>
+        </div>
+        <div class="form-group">
+            <input type="text" name="street" formControlName="street" placeholder="Street" class="form-control"/>
+            <sup style="color:red">*</sup>
+            <span *ngIf="signupFrm.controls['email'].errors" class="alert alert-danger">Street is required</span>
+        </div>
+        <input type="submit" value="Sign Up" class="btn btn-primary"/>
     </form>
 </fieldset>

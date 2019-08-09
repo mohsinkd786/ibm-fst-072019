@@ -19,10 +19,8 @@ export class UsersComponent implements OnInit {
     this.createSignupForm(); // build the signup form
   
   }
-
   getUsers(){
     this.userService.getUsers((data)=>{
-      console.log(data);
       this.users = data.users;
     });
   }
