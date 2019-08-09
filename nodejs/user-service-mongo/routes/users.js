@@ -60,9 +60,9 @@ routes.get('/asy/user/:id',(rq,rs)=>{
             });
         })
         .catch(err=>{
-            console.log(err);
             rs.json({
-                message : 'Unable to get User Details'
+                message : 'Unable to get User Details',
+                error: err
             });
         })
 
