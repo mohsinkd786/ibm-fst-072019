@@ -1,15 +1,31 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import { RouterTestingModule } from "@angular/router/testing";
+import { Router } from '@angular/router';
+import { Location } from "@angular/common";
+import { routes } from './app-routes';
 
 describe('AppComponent', () => {
+  let router : Router
+  let location: Location
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
         UserComponent
       ],
+      imports : [
+        RouterTestingModule.withRoutes(routes)
+      ]
     }).compileComponents();
+
+    // setup mock objects from test bed
+    router = TestBed.get(Router);
+    location = TestBed.get(Location);
+
+    router.initialNavigation();
+
   }));
 
   it('should create the app', () => {
@@ -30,4 +46,11 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to testing!');
   });
+
+  it('should get redirected to ',fakeAsync( ()=>{
+    router.navigate(['']).then(()=>{
+      tick(10); 
+      expect(location.path()).toBe('/home');
+    });
+  }));
 });
